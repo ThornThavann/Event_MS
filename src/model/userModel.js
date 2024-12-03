@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 const attendeeSchema = new mongoose.Schema(
   {
-    username: { type: String, require: true, max: 200 },
-    email: { type: String, require: true,   max: 100},
-    password: { type: String, require: true, max: 20 },
+    username: { type: String, require: true },
+    email: { type: String, require: true},
+    password: { type: String, require: true},
   },
 );
 

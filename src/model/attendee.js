@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 
 const attendeeSchema = new mongoose.Schema(
   {
-    name: { type: String, require:true,  max: 200},
-    email: { type: String, require:true,  max: 100},
-    eventname: { type: String, require:true, max: 200},
+    name: { type: String, require:true},
+    email: { type: String, require:true},
+    eventname: { type: String, require:true},
     create_by:{type:mongoose.Schema.Types.ObjectId,ref:"user"},
     update_by:{type:mongoose.Schema.Types.ObjectId,ref:"user"},
 
@@ -14,6 +14,6 @@ const attendeeSchema = new mongoose.Schema(
   }
 );
 
-const attendeeModel = mongoose.module("attendee", attendeeSchema);
+const attendeeModel = mongoose.model("attendee", attendeeSchema);
 export default attendeeModel;
-console.log(attendeeSchema);
+// console.log(attendeeSchema);
