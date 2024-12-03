@@ -1,6 +1,6 @@
-import attendeeModel from "../model/attendee.js";
+import attendenceModel from "../model/attendee.js";
 
-const createattendee = async (req, res) => {
+const createattendence = async (req, res) => {
   try {
     const { name, email, eventname } = req.body;
     console.log(req.body);
@@ -9,38 +9,38 @@ const createattendee = async (req, res) => {
       return res.status(404).json({ message: "fields required" });
     }
 
-    const newAttendee = new attendeeModel({
+    const newAttendence = new attendenceModel({
       name,
       email,
       eventname,
     });
 
-    const savedAttende = await newAttendee.save();
+    const savedAttendence = await newAttendence.save();
 
-    return res.status(201).json(savedAttende);
+    return res.status(201).json(savedAttendence);
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: "Internal server error" });
   }
 };
-const getAllattendee = async (req, res) => {
-  const attendee = await attendeeModel.find();
+const getAllattendence = async (req, res) => {
+  const attendence = await attendenceModel.find();
   try {
-    return res.status(200).json(attendee);
+    return res.status(200).json(attendence);
   } catch (error) {
     return res.status(500).json({
       message: "error",
     });
   }
 };
-const updateAttendee = async (req, res) => {
+const updateAttendance = async (req, res) => {
   try {
-    const attendeeId = req.params.id;
-    const attendeeDate = req.body;
+    const attendenceId = req.params.id;
+    const attendenceDate = req.body;
 
-    const attendence = await attendeeModel.findByIdAndUpdate(
-      attendeeId,
-      attendeeDate,
+    const attendence = await attendenceModel.findByIdAndUpdate(
+      attendenceId,
+      attendenceDate,
       {new: true});
     if (!attendence)
       return res.status(404).json({ message: "attendee not found" });
@@ -52,9 +52,9 @@ const updateAttendee = async (req, res) => {
 };
 const deleteAttendence = async (req, res) => {
   try {
-    const attendee = await attendeeModel.findByIdAndDelete(req.params.id);
+    const attendence = await attendenceModel.findByIdAndDelete(req.params.id);
 
-      return res.status(200).json({ message: " delete successfully" , attendee});
+      return res.status(200).json({ message: " delete successfully" , attendence});
   
   } catch (err) {
     console.log(err, "error");
@@ -63,8 +63,8 @@ const deleteAttendence = async (req, res) => {
 };
 const getIdAttendence = async (req, res) => {
   try {
-    const attendeeId =req.params.id;
-    const attendee = await attendeeModel.findById(attendeeId);
+    const attendenceId =req.params.id;
+    const attendee = await attendenceModel.findById(attendenceId);
     return res.status(200).json({ message: " delete successfully" , attendee});
   } catch (error) {
     console.log(error, "error");
@@ -73,4 +73,4 @@ const getIdAttendence = async (req, res) => {
 };
 
 
-export default { createattendee, getAllattendee, updateAttendee, deleteAttendence,  getIdAttendence};
+export default { createattendence, getAllattendence, updateAttendance, deleteAttendence,  getIdAttendence};

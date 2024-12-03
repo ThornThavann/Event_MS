@@ -1,15 +1,15 @@
 import express from "express";
-const attendeerouter = express.Router();
+const attendencerouter = express.Router();
 import attendence from "../controllers/attendeeController.js";
-const {createattendee,getAllattendee, deleteAttendence,updateAttendee, getIdAttendence }= attendence;
+const {createattendence,getAllattendence, deleteAttendence,updateAttendance, getIdAttendence }= attendence;
 
-attendeerouter.post("/create", createattendee);
-attendeerouter.get("/attendence", getAllattendee);
-attendeerouter.put("/update/:id", updateAttendee);
-attendeerouter.delete("/delete/:id", deleteAttendence);
-attendeerouter.get("/attendence/:id", getIdAttendence);
-
-
+attendencerouter.post("/create", createattendence);
+attendencerouter.get("/attendence", getAllattendence);
+attendencerouter.put("/update/:id", updateAttendance);
+attendencerouter.delete("/delete/:id", deleteAttendence);
+attendencerouter.get("/attendence/:id", getIdAttendence);
 
 
-export default attendeerouter;
+
+
+export default attendencerouter;
