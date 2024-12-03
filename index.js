@@ -1,12 +1,16 @@
 import dotenv from "dotenv";
 import express from "express";
 import Mongoose from "mongoose";
+import router from "./src/route/organizerRouten.js";
+import venuerouter from "./src/route/venueRoute.js"
+
 
 import router from './src/route/organizerRouten.js'
 import attendencerouter from './src/route/attendeeRoute.js'
 
 import organizerRouter from "./src/route/organizerRouten.js";
 import sponsorRouter from "./src/route/sposorModel.js";
+
 
 dotenv.config();
 
@@ -16,11 +20,14 @@ app.use(express.json());
 
 
 app.use("/api", router);
+
+app.use("/api", venuerouter);
+
 app.use("/api", attendencerouter);
 
 app.use("/api", organizerRouter);
 
-//sponsor
+
 app.use("/api/sponsor", sponsorRouter);
 
 
