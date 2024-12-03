@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+
 const { Schema, model } = mongoose;
 
 const userModelSchema = new Schema(
@@ -33,3 +34,4 @@ const userModelSchema = new Schema(
 const userModel = model("User", userModelSchema);
 
 export default userModel;
+
