@@ -3,6 +3,7 @@ import express from "express";
 import Mongoose from "mongoose";
 import organizerRouter from "./src/route/organizerRouten.js";
 import sponsorRouter from "./src/route/sposorModel.js";
+import autRouter from "./src/route/authRouter.js";
 
 dotenv.config();
 
@@ -14,6 +15,9 @@ app.use("/api", organizerRouter);
 
 //sponsor
 app.use("/api/sponsor", sponsorRouter);
+
+// user
+app.use("/api/user", autRouter);
 
 Mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 
