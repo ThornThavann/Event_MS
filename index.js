@@ -2,8 +2,7 @@ import dotenv from "dotenv";
 import express from "express";
 import Mongoose from "mongoose";
 import router from "./src/Routen/organizerRouten.js";
-import dotenv from "dotenv";
-import express from "express";
+
 
 dotenv.config();
 

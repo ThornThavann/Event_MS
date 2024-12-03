@@ -1,10 +1,8 @@
-
-// const express = require('express');
-
-// const { registerUser, l} = require('../controllers/attendeeController');
-// // const verifyToken  = require('../Modelware/roleMiddleware');
-// const router = express.Router();
-// router.post('/register', registerUser);
+import express  from 'express';
+const router = express.Router();
+import createattendee from '../controllers/attendeeController';
+router.post("/attendee", createattendee);
+ 
 
 
 
