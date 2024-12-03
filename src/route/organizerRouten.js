@@ -6,7 +6,7 @@ import {
   getIdOrganizer,
   updateOrganizer,
   deleteOrganizer,
-} from "../Controller/organizerController.js";
+} from "../controllers/organizerController.js";
 
 router.post("/new", createOrganizer);
 router.get("/all", getAllOrganizer);

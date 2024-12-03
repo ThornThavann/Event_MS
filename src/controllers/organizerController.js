@@ -1,4 +1,4 @@
-import OrganizerModel from "../Model/Organizer.js";
+import OrganizerModel from "../model/Organizer.js";
 
 export const createOrganizer = async (req, res) => {
   try {
