@@ -1,9 +1,8 @@
 import dotenv from "dotenv";
 import express from "express";
 import Mongoose from "mongoose";
-import router from "./src/Routen/organizerRouten.js";
-import dotenv from "dotenv";
-import express from "express";
+import router from "./src/route/organizerRouten.js";
+import venuerouter from "./src/route/venueRoute.js"
 
 dotenv.config();
 
@@ -12,6 +11,7 @@ const app = express();
 app.use(express.json());
 
 app.use("/api", router);
+app.use("/api", venuerouter);
 
 Mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 

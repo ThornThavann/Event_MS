@@ -1,5 +1,3 @@
-console.log("Organizer Model Schema Created");
-console.log("Organizer Model Created");
 import mongoose from "mongoose";
 
 const { Schema, model } = mongoose;
