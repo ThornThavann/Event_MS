@@ -3,8 +3,8 @@ const eventrouter = express.Router();
 import { createevent, getAllevent } from "../controllers/eventController.js" ;
 
 
-eventrouter.post("/create", createevent);
-eventrouter.get("/events", getAllevent);
+eventrouter.post("/event/create ", createevent);
+eventrouter.get("/event/all", getAllevent);
 
 
 

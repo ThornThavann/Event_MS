@@ -1,5 +1,6 @@
 import express from "express";
 const router = express.Router();
+
 import {
   createOrganizer,
   getAllOrganizer,
@@ -8,10 +9,10 @@ import {
   deleteOrganizer,
 } from "../controllers/organizerController.js";
 
-router.post("/new", createOrganizer);
-router.get("/all", getAllOrganizer);
-router.get("/all/:id", getIdOrganizer);
-router.put("/all/:id", updateOrganizer);
-router.delete("/all/:id", deleteOrganizer);
+router.post("/organizer/create", createOrganizer);
+router.get("/organizer/all", getAllOrganizer);
+router.get("/organizer/:id", getIdOrganizer);
+router.put("/organizer/:id", updateOrganizer);
+router.delete("/organizer/:id", deleteOrganizer);
 
 export default router;

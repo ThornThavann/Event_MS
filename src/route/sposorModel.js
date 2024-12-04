@@ -8,10 +8,10 @@ import {
 } from "../controllers/sponsorController.js";
 const router = express.Router();
 
-router.post("/new", createSponsor);
-router.get("/all", getAllSponsor);
-router.get("/all/:id", getByIdSponsor);
-router.put("/update/:id", updateSponsor);
-router.delete("/delete/:id", deleteSponsor);
+router.post("/sponsor/create", createSponsor);
+router.get("/sponsor/all", getAllSponsor);
+router.get("/sponsor/:id", getByIdSponsor);
+router.put("/sponsor/:id", updateSponsor);
+router.delete("/sponsor/:id", deleteSponsor);
 
 export default router;
